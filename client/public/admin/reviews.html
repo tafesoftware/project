@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews Management - TravelInsight Admin</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <div class="admin-container">
+        <!-- Admin Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <a href="../index.html">TravelInsight</a>
+                <span class="admin-badge">Admin</span>
+            </div>
+            <nav class="admin-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="destinations.html"><i class="fas fa-map-marker-alt"></i> Destinations</a>
+                    </li>
+                    <li>
+                        <a href="hotels.html"><i class="fas fa-hotel"></i> Hotels</a>
+                    </li>
+                    <li>
+                        <a href="restaurants.html"><i class="fas fa-utensils"></i> Restaurants</a>
+                    </li>
+                    <li>
+                        <a href="guides.html"><i class="fas fa-user-tie"></i> Tour Guides</a>
+                    </li>
+                    <li>
+                        <a href="users.html"><i class="fas fa-users"></i> Users</a>
+                    </li>
+                    <li class="active">
+                        <a href="reviews.html"><i class="fas fa-star"></i> Reviews</a>
+                    </li>
+                    <li>
+                        <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="admin-logout">
+                <a href="#" id="adminLogout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Admin Main Content -->
+        <main class="admin-main">
+            <!-- Admin Header -->
+            <header class="admin-header">
+                <div class="admin-search">
+                    <input type="text" placeholder="Search reviews...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="admin-user">
+                    <div class="admin-notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="admin-profile">
+                        <img src="../images/admin-avatar.jpg" alt="Admin">
+                        <span>Admin User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Reviews Content -->
+            <div class="admin-content">
+                <div class="admin-page-title">
+                    <h1>Reviews Management</h1>
+                    <p>Monitor and moderate user reviews</p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="admin-actions">
+                    <div class="admin-filters">
+                        <select class="form-control" id="categoryFilter">
+                            <option value="">All Categories</option>
+                            <option value="destination">Destinations</option>
+                            <option value="hotel">Hotels</option>
+                            <option value="restaurant">Restaurants</option>
+                            <option value="guide">Tour Guides</option>
+                        </select>
+                        <select class="form-control" id="ratingFilter">
+                            <option value="">All Ratings</option>
+                            <option value="5">5 Stars</option>
+                            <option value="4">4 Stars</option>
+                            <option value="3">3 Stars</option>
+                            <option value="2">2 Stars</option>
+                            <option value="1">1 Star</option>
+                        </select>
+                        <select class="form-control" id="statusFilter">
+                            <option value="">All Statuses</option>
+                            <option value="approved">Approved</option>
+                            <option value="pending">Pending</option>
+                            <option value="flagged">Flagged</option>
+                            <option value="hidden">Hidden</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Reviews Stats -->
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(33, 150, 243, 0.1);">
+                            <i class="fas fa-star" style="color: #2196f3;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Reviews</h3>
+                            <p class="stat-number">4,521</p>
+                            <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 156 this month</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(255, 152, 0, 0.1);">
+                            <i class="fas fa-clock" style="color: #FF9800;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Pending Reviews</h3>
+                            <p class="stat-number">23</p>
+                            <p class="stat-change negative"><i class="fas fa-arrow-down"></i> 12% this week</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(244, 67, 54, 0.1);">
+                            <i class="fas fa-flag" style="color: #f44336;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Flagged Reviews</h3>
+                            <p class="stat-number">8</p>
+                            <p class="stat-change neutral">No change</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(76, 175, 80, 0.1);">
+                            <i class="fas fa-chart-line" style="color: #4CAF50;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Average Rating</h3>
+                            <p class="stat-number">4.6</p>
+                            <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 0.2 this month</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reviews Table -->
+                <div class="admin-card">
+                    <div class="admin-table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>User</th>
+                                    <th>Item</th>
+                                    <th>Category</th>
+                                    <th>Rating</th>
+                                    <th>Review</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="reviewsTableBody">
+                                <!-- Review rows will be loaded dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="admin-pagination">
+                        <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                        <span class="pagination-info">Page 1 of 8</span>
+                        <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Review Details Modal -->
+    <div class="modal" id="reviewModal">
+        <div class="modal-content">
+            <h2 id="modalTitle">Review Details</h2>
+            <div id="reviewDetails" class="review-details">
+                <!-- Review details will be loaded dynamically -->
+            </div>
+            <div class="form-actions">
+                <button class="btn-admin btn-danger" id="hideReviewBtn">Hide Review</button>
+                <button class="btn-admin btn-warning" id="flagReviewBtn">Flag Review</button>
+                <button class="btn-admin btn-success" id="approveReviewBtn">Approve Review</button>
+            </div>
+            <button class="modal-close" id="closeReviewModal">&times;</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/reviews.js"></script>
+</body>
+</html> 

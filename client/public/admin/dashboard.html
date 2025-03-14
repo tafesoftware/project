@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - TravelInsight</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <div class="admin-container">
+        <!-- Admin Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <a href="../index.html">TravelInsight</a>
+                <span class="admin-badge">Admin</span>
+            </div>
+            <nav class="admin-nav">
+                <ul>
+                    <li class="active">
+                        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="destinations.html"><i class="fas fa-map-marker-alt"></i> Destinations</a>
+                    </li>
+                    <li>
+                        <a href="hotels.html"><i class="fas fa-hotel"></i> Hotels</a>
+                    </li>
+                    <li>
+                        <a href="restaurants.html"><i class="fas fa-utensils"></i> Restaurants</a>
+                    </li>
+                    <li>
+                        <a href="guides.html"><i class="fas fa-user-tie"></i> Tour Guides</a>
+                    </li>
+                    <li>
+                        <a href="users.html"><i class="fas fa-users"></i> Users</a>
+                    </li>
+                    <li>
+                        <a href="reviews.html"><i class="fas fa-star"></i> Reviews</a>
+                    </li>
+                    <li>
+                        <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="admin-logout">
+                <a href="#" id="adminLogout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Admin Main Content -->
+        <main class="admin-main">
+            <!-- Admin Header -->
+            <header class="admin-header">
+                <div class="admin-search">
+                    <input type="text" placeholder="Search...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="admin-user">
+                    <div class="admin-notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="admin-profile">
+                        <img src="../images/admin-avatar.jpg" alt="Admin">
+                        <span>Admin User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="admin-content">
+                <div class="admin-page-title">
+                    <h1>Dashboard</h1>
+                    <p>Welcome to TravelInsight Admin Panel</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(33, 150, 243, 0.1);">
+                            <i class="fas fa-users" style="color: #2196f3;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Users</h3>
+                            <p class="stat-number">1,245</p>
+                            <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 12% this month</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(76, 175, 80, 0.1);">
+                            <i class="fas fa-hotel" style="color: #4CAF50;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Hotels</h3>
+                            <p class="stat-number">87</p>
+                            <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 5% this month</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(255, 152, 0, 0.1);">
+                            <i class="fas fa-utensils" style="color: #FF9800;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Restaurants</h3>
+                            <p class="stat-number">124</p>
+                            <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 8% this month</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(233, 30, 99, 0.1);">
+                            <i class="fas fa-star" style="color: #E91E63;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Reviews</h3>
+                            <p class="stat-number">3,782</p>
+                            <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 15% this month</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity and Charts -->
+                <div class="admin-dashboard-grid">
+                    <!-- Recent Activity -->
+                    <div class="admin-card recent-activity">
+                        <div class="card-header">
+                            <h2>Recent Activity</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon" style="background-color: rgba(33, 150, 243, 0.1);">
+                                    <i class="fas fa-user-plus" style="color: #2196f3;"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <p>New user registered: <strong>Abebe Kebede</strong></p>
+                                    <span class="activity-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon" style="background-color: rgba(76, 175, 80, 0.1);">
+                                    <i class="fas fa-hotel" style="color: #4CAF50;"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <p>New hotel added: <strong>Haile Resort Arba Minch</strong></p>
+                                    <span class="activity-time">5 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon" style="background-color: rgba(233, 30, 99, 0.1);">
+                                    <i class="fas fa-star" style="color: #E91E63;"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <p>New review for <strong>Sheraton Addis</strong> by <strong>Tigist Haile</strong></p>
+                                    <span class="activity-time">Yesterday</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon" style="background-color: rgba(255, 152, 0, 0.1);">
+                                    <i class="fas fa-utensils" style="color: #FF9800;"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <p>New restaurant added: <strong>Lucy Ethiopian Restaurant</strong></p>
+                                    <span class="activity-time">2 days ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon" style="background-color: rgba(156, 39, 176, 0.1);">
+                                    <i class="fas fa-map-marker-alt" style="color: #9C27B0;"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <p>New destination added: <strong>Gheralta Mountains</strong></p>
+                                    <span class="activity-time">3 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User Registration Chart -->
+                    <div class="admin-card chart-card">
+                        <div class="card-header">
+                            <h2>User Registrations</h2>
+                            <div class="chart-period">
+                                <button class="active">Week</button>
+                                <button>Month</button>
+                                <button>Year</button>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="registrationChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Top Destinations -->
+                    <div class="admin-card top-destinations">
+                        <div class="card-header">
+                            <h2>Top Destinations</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="destinations-list">
+                            <div class="destination-item">
+                                <img src="../images/destinations/lalibela.jpg" alt="Lalibela">
+                                <div class="destination-details">
+                                    <h3>Lalibela</h3>
+                                    <div class="destination-stats">
+                                        <span><i class="fas fa-eye"></i> 12.5K views</span>
+                                        <span><i class="fas fa-star"></i> 4.8</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="destination-item">
+                                <img src="../images/destinations/simien.jpg" alt="Simien Mountains">
+                                <div class="destination-details">
+                                    <h3>Simien Mountains</h3>
+                                    <div class="destination-stats">
+                                        <span><i class="fas fa-eye"></i> 10.2K views</span>
+                                        <span><i class="fas fa-star"></i> 4.7</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="destination-item">
+                                <img src="../images/destinations/danakil.jpg" alt="Danakil Depression">
+                                <div class="destination-details">
+                                    <h3>Danakil Depression</h3>
+                                    <div class="destination-stats">
+                                        <span><i class="fas fa-eye"></i> 9.8K views</span>
+                                        <span><i class="fas fa-star"></i> 4.9</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="destination-item">
+                                <img src="../images/destinations/omo.jpg" alt="Omo Valley">
+                                <div class="destination-details">
+                                    <h3>Omo Valley</h3>
+                                    <div class="destination-stats">
+                                        <span><i class="fas fa-eye"></i> 8.5K views</span>
+                                        <span><i class="fas fa-star"></i> 4.6</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Revenue Chart -->
+                    <div class="admin-card chart-card">
+                        <div class="card-header">
+                            <h2>Revenue</h2>
+                            <div class="chart-period">
+                                <button class="active">Week</button>
+                                <button>Month</button>
+                                <button>Year</button>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/charts.js"></script>
+</body>
+</html> 

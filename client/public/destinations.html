@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - TravelInsight</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="/">TravelInsight</a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search destinations...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="hotels.html" class="nav-link">Hotels</a>
+                <a href="restaurants.html" class="nav-link">Restaurants</a>
+                <a href="tour-guides.html" class="nav-link">Tour Guides</a>
+                <a href="destinations.html" class="nav-link active">Destinations</a>
+            </div>
+            <div class="auth-buttons" id="authButtons">
+                <button class="btn login-btn">Login</button>
+                <button class="btn signup-btn">Sign Up</button>
+            </div>
+            <div class="user-menu hidden" id="userMenu">
+                <img src="images/default-avatar.png" alt="User" class="user-avatar">
+                <div class="dropdown-menu">
+                    <a href="/profile">My Profile</a>
+                    <a href="/bookings">My Bookings</a>
+                    <a href="/reviews">My Reviews</a>
+                    <a href="#" id="logoutBtn">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="banner-content">
+            <h1>Ethiopian Destinations</h1>
+            <p>Discover the beauty and diversity of Ethiopia</p>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="destinations-page">
+        <div class="filters">
+            <div class="filter-group">
+                <label for="regionFilter">Region</label>
+                <select id="regionFilter">
+                    <option value="">All Regions</option>
+                    <option value="North">Northern Ethiopia</option>
+                    <option value="South">Southern Ethiopia</option>
+                    <option value="East">Eastern Ethiopia</option>
+                    <option value="West">Western Ethiopia</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="typeFilter">Type</label>
+                <select id="typeFilter">
+                    <option value="">All Types</option>
+                    <option value="Historical">Historical</option>
+                    <option value="Natural">Natural</option>
+                    <option value="Cultural">Cultural</option>
+                    <option value="Religious">Religious</option>
+                </select>
+            </div>
+            <button class="filter-btn">Apply Filters</button>
+        </div>
+
+        <div class="destination-grid" id="destinationGrid">
+            <!-- Destinations will be loaded dynamically -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About TravelInsight</h3>
+                <p>Your trusted companion for discovering Ethiopia's best places.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@travelinsight.com</p>
+                <p>Phone: +251 911 234 567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TravelInsight. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Templates -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn signup-btn">Login</button>
+            </form>
+            <p class="form-footer">
+                Don't have an account? <a href="#" id="switchToSignup">Sign up</a>
+            </p>
+            <button class="modal-close" id="closeLoginModal">&times;</button>
+        </div>
+    </div>
+
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="userType">Register as:</label>
+                    <select id="userType" required>
+                        <option value="traveler">Traveler</option>
+                        <option value="hotel">Hotel Owner</option>
+                        <option value="restaurant">Restaurant Owner</option>
+                        <option value="guide">Tour Guide</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn signup-btn">Sign Up</button>
+            </form>
+            <p class="form-footer">
+                Already have an account? <a href="#" id="switchToLogin">Login</a>
+            </p>
+            <button class="modal-close" id="closeSignupModal">&times;</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

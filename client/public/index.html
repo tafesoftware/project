@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelInsight - Your Travel Companion</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="/">TravelInsight</a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search destinations, hotels, restaurants...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="hotels.html" class="nav-link">Hotels</a>
+                <a href="restaurants.html" class="nav-link">Restaurants</a>
+                <a href="tour-guides.html" class="nav-link">Tour Guides</a>
+                <a href="destinations.html" class="nav-link">Destinations</a>
+            </div>
+            <div class="auth-buttons" id="authButtons">
+                <button class="btn login-btn">Login</button>
+                <button class="btn signup-btn">Sign Up</button>
+            </div>
+            <div class="user-menu hidden" id="userMenu">
+                <img src="images/default-avatar.png" alt="User" class="user-avatar">
+                <div class="dropdown-menu">
+                    <a href="/profile">My Profile</a>
+                    <a href="/bookings">My Bookings</a>
+                    <a href="/reviews">My Reviews</a>
+                    <a href="#" id="logoutBtn">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Discover Your Next Adventure</h1>
+                <p>Find the best places to stay, eat, and explore</p>
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" placeholder="Where to?" id="destinationInput">
+                        <input type="date" id="checkInDate">
+                        <input type="date" id="checkOutDate">
+                        <select id="guestCount">
+                            <option value="">Guests</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4+ Guests</option>
+                        </select>
+                        <button class="search-btn">Search</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Destinations -->
+        <section class="destinations">
+            <div class="section-header">
+                <h2>Popular Destinations</h2>
+                <p>Explore top-rated places around the world</p>
+            </div>
+            <div class="destination-grid" id="destinationGrid">
+                <!-- Destinations will be loaded dynamically -->
+            </div>
+        </section>
+
+        <!-- Featured Hotels -->
+        <section class="hotels">
+            <div class="section-header">
+                <h2>Featured Hotels</h2>
+                <p>Find the perfect place to stay</p>
+            </div>
+            <div class="hotel-grid" id="hotelGrid">
+                <!-- Hotels will be loaded dynamically -->
+            </div>
+        </section>
+
+        <!-- Top Restaurants -->
+        <section class="restaurants">
+            <div class="section-header">
+                <h2>Top Restaurants</h2>
+                <p>Discover culinary excellence</p>
+            </div>
+            <div class="restaurant-grid" id="restaurantGrid">
+                <!-- Restaurants will be loaded dynamically -->
+            </div>
+        </section>
+
+        <!-- Tour Guides -->
+        <section class="tour-guides">
+            <div class="section-header">
+                <h2>Expert Tour Guides</h2>
+                <p>Experience local insights</p>
+            </div>
+            <div class="guide-grid" id="guideGrid">
+                <!-- Tour guides will be loaded dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About TravelInsight</h3>
+                <p>Your trusted companion for discovering the world's best places.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@travelinsight.com</p>
+                <p>Phone: +1 234 567 890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TravelInsight. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Templates -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn signup-btn">Login</button>
+            </form>
+            <p class="form-footer">
+                Don't have an account? <a href="#" id="switchToSignup">Sign up</a>
+            </p>
+            <button class="modal-close" id="closeLoginModal">&times;</button>
+        </div>
+    </div>
+
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <!-- Common Fields -->
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="userType">Register as:</label>
+                    <select id="userType" required>
+                        <option value="traveler">Traveler</option>
+                        <option value="hotel">Hotel Owner</option>
+                        <option value="restaurant">Restaurant Owner</option>
+                        <option value="guide">Tour Guide</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn signup-btn">Sign Up</button>
+            </form>
+            <p class="form-footer">
+                Already have an account? <a href="#" id="switchToLogin">Login</a>
+            </p>
+            <button class="modal-close" id="closeSignupModal">&times;</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

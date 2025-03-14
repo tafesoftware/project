@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - TravelInsight</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="/">TravelInsight</a>
+            </div>
+            <div class="nav-links">
+                <a href="hotels.html" class="nav-link">Hotels</a>
+                <a href="restaurants.html" class="nav-link">Restaurants</a>
+                <a href="tour-guides.html" class="nav-link">Tour Guides</a>
+                <a href="destinations.html" class="nav-link">Destinations</a>
+            </div>
+            <div class="user-menu">
+                <img src="images/default-avatar.png" alt="User" class="user-avatar" id="userAvatar">
+                <div class="dropdown-menu">
+                    <a href="profile.html">My Profile</a>
+                    <a href="bookings.html">My Bookings</a>
+                    <a href="reviews.html">My Reviews</a>
+                    <a href="#" id="logoutBtn">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dashboard Content -->
+    <main class="dashboard-container">
+        <div class="welcome-section">
+            <h1>Welcome, <span id="userName">Traveler</span>!</h1>
+            <p>What would you like to do today?</p>
+        </div>
+
+        <div class="quick-actions">
+            <div class="action-card">
+                <i class="fas fa-hotel"></i>
+                <h3>Book a Hotel</h3>
+                <p>Find and book your perfect stay</p>
+                <a href="hotels.html" class="btn">Browse Hotels</a>
+            </div>
+            <div class="action-card">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>Plan a Tour</h3>
+                <p>Explore guided tours and experiences</p>
+                <a href="tour-guides.html" class="btn">Find Tours</a>
+            </div>
+            <div class="action-card">
+                <i class="fas fa-utensils"></i>
+                <h3>Restaurant Reservations</h3>
+                <p>Discover local cuisine</p>
+                <a href="restaurants.html" class="btn">Find Restaurants</a>
+            </div>
+            <div class="action-card">
+                <i class="fas fa-compass"></i>
+                <h3>Explore Destinations</h3>
+                <p>Discover amazing places</p>
+                <a href="destinations.html" class="btn">View Destinations</a>
+            </div>
+        </div>
+
+        <div class="dashboard-sections">
+            <div class="section upcoming-bookings">
+                <h2>Upcoming Bookings</h2>
+                <div class="booking-list" id="upcomingBookings">
+                    <!-- Bookings will be loaded dynamically -->
+                </div>
+                <a href="bookings.html" class="btn-link">View All Bookings</a>
+            </div>
+
+            <div class="section recent-activity">
+                <h2>Recent Activity</h2>
+                <div class="activity-list" id="recentActivity">
+                    <!-- Activity will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html> 
